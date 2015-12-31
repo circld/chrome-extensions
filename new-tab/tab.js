@@ -12,9 +12,19 @@
       return retval;
     }
     var now = new Date(),
-        time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
+        time = now.getHours() + ':' + Date.getMinutesTwoDigits();
     document.getElementById('time').innerHTML = ["", time].join('');
     setTimeout(updateClock, 1000);
+  }
+
+  function updateDate() {
+    /*Date.getDate = function() {
+      var retval = Date.toLocaleDateString();
+      return retval;
+    }
+    */
+    var today = new Date().toLocaleDateString();
+    document.getElementById('date').innerHTML = ["", today].join('');
   }
 
   function addSearch(elementId, callback) {
@@ -137,21 +147,26 @@
   function _processFavorites(favorites) {
     var header = [];
         accum = [];
+        links = [];
 
     for (var i = 0; i < favorites.length; i++) {
       header.push(favorites[i].title);
       accum.push(favorites[i].children);
+      links.push(favorites[i].url);
     }
-    _displayFavorites(header, accum);
+    _displayFavorites(header, accum, links);
   }
 
-  function _displayFavorites(header, bookmarks) {
+  function _displayFavorites(header, bookmarks, links) {
     var table = document.getElementById('bookmarks');
     // Create header row.
     var headerRow = document.createElement('tr');
     for (var i = 0; i < header.length; i++) {
       var th = document.createElement('th');
-      th.appendChild(document.createTextNode(header[i]));
+      var link = document.createElement('a');
+      link.setAttribute('href', links[i]);
+      link.text = header[i];
+      th.appendChild(link);
       headerRow.appendChild(th);
     }
     table.appendChild(headerRow);
@@ -196,6 +211,7 @@
   });
 
   updateClock();
+  updateDate();
   bindNoteHandlers();
   bindHistory();
   loadBookmarks(bookmarkFolder);
