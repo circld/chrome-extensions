@@ -163,10 +163,7 @@
     var headerRow = document.createElement('tr');
     for (var i = 0; i < header.length; i++) {
       var th = document.createElement('th');
-      var link = document.createElement('a');
-      link.setAttribute('href', links[i]);
-      link.text = header[i];
-      th.appendChild(link);
+      th.appendChild(document.createTextNode(header[i]));
       headerRow.appendChild(th);
     }
     table.appendChild(headerRow);
@@ -191,23 +188,20 @@
     chrome.bookmarks.getTree(function(nodes) { search(nodes); });
   }
 
-  addSearch('search', function(s) {
-    window.location.href = 'https://www.google.com/#q=' + s;
+  addSearch('wikipedia', function(s) {
+    window.location.href = 'https://en.wikipedia.org/wiki/Special:Search/' + s;
+  });
+  addSearch('maps', function(s) {
+    window.location.href = 'http://maps.google.com/?q=' + s;
+  });
+  addSearch('stackoverflow', function(s) {
+    window.location.href = 'http://stackoverflow.com/search?q=' + s;
+  });
+  addSearch('yelp', function(s) {
+    window.location.href = 'http://www.yelp.com/search?find_desc=' + s + '&find_loc=Denver%2C+CO&ns=1';
   });
   addSearch('subreddit', function(s) {
     window.location.href = 'http://www.reddit.com/r/' + s;
-  });
-  addSearch('issue', function(s) {
-    window.location.href = 'https://github.counsyl.com/dev/website/issues/' + s;
-  });
-  addSearch('weather', function(s) {
-    window.location.href = 'http://www.wunderground.com/cgi-bin/findweather/getForecast?query=' + s;
-  });
-  addSearch('testp', function(s) {
-    window.location.href = 'https://testp-' + s + '.counsyl.com/helpdesk/';
-  });
-  addSearch('playground', function(s) {
-    window.location.href = 'https://playground.charlesleifer.com/?q=' + s;
   });
 
   updateClock();

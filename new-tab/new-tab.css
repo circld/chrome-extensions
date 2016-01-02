@@ -2,21 +2,21 @@ body {
   background : #111111;
 }
 .current {
-  height : 300px;
-  margin-left : auto;
-  margin-right : auto;
+  height : 30%;
+  padding: 2.5%;
+  margin-left : 7%;
+  margin-right : 7%;
 }
-.keepcentered {
-  width : 640px;
-  height : 300px;
-  margin-left : auto;
-  margin-right : auto;
+.favorites {
+  height : 50%;
+  padding: 2.5%;
+  margin-left : 7%;
+  margin-right : 7%;
   font-weight : 100;
 }
 body {
   font-family: 'Electrolize', sans-serif;
   font-style : normal;
-  /*color: #d75f5f;*/
   color: #8e7766;
   margin : 5px;
 }
@@ -51,7 +51,7 @@ a:link {
   text-decoration : none;
   text-shadow: 0px 0px 0px #000;
 }
-input#search {
+input#wikipedia {
   width: 100%;
   font-size: 18px;
 }
@@ -71,12 +71,24 @@ div.notes {
 }
 textarea#noteText {height: 125px; width: 100%;}
 div#datetime {
-  float:left;
-  padding: 2.5%;
-  width: 20%;
+  margin-top: 2.5%;
+  float: left;
+  width: 30%;
 }
 div.weather_widget {
   float: left;
-  padding: 2.5%;
   width: 70%;
+}
+div#search {
+  float: left;
+  width: 50%;
+}
+div#links {
+  margin-top: 2%;
+  float: left;
+  width: 50%;
+}
+/* webkit-enabled browsers ONLY */
+::-webkit-scrollbar { 
+    display: none; 
 }
