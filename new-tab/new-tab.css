@@ -1,12 +1,16 @@
 body {
   background : #111111;
 }
+.current {
+  height : 300px;
+  margin-left : auto;
+  margin-right : auto;
+}
 .keepcentered {
   width : 640px;
   height : 300px;
   margin-left : auto;
   margin-right : auto;
-  margin-top: 200px;
   font-weight : 100;
 }
 body {
@@ -61,20 +65,18 @@ div.history {
   display: none;
 }
 div#date { font-size: 36px; }
-div.history {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  width: 45%;
-  display: none;
-}
 input#historyText {width: 100%;}
-div.notes { 
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  width: 35%;
+div.notes {
+  width: 100%;
 }
 textarea#noteText {height: 125px; width: 100%;}
+div#datetime {
+  float:left;
+  padding: 2.5%;
+  width: 20%;
+}
+div.weather_widget {
+  float: left;
+  padding: 2.5%;
+  width: 70%;
+}

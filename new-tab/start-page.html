@@ -7,15 +7,16 @@
 </head>
 
 <body>
-<div class="history">
-  <input id="historyText" placeholder="history..." type="text" />
-</div>
-<div class="notes">
-  <textarea id="noteText"></textarea>
+<div class="current">
+  <div id="datetime">
+      <div id="time"></div>
+      <div id="date"></div>
+  </div>
+  <div class="weather_widget">
+    <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=39.725661&lon=-104.940719&name=Denver"> </iframe>
+  </div>
 </div>
 <div class="keepcentered">
-  <center><div id="time"></div></center>
-  <center><div id="date"></div></center>
   <p>
     <table id="bookmarks" width="100%" border="0px">
     </table>
@@ -32,6 +33,12 @@
       </tr>
     </table>
   </p>
+  <div class="notes">
+    <textarea id="noteText"></textarea>
+  </div>
+</div>
+<div class="history">
+  <input id="historyText" placeholder="history..." type="text" />
 </div>
 </body>
 <script src="tab.js"></script>
