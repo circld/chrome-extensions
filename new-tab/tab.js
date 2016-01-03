@@ -136,8 +136,10 @@
           link.appendChild(document.createTextNode(' '));
         }
       }
-      link.appendChild(document.createTextNode(bookmarks[i].title));
-      link.href = bookmarks[i].url;
+      if (typeof bookmarks[i] !== "undefined") {
+        link.appendChild(document.createTextNode(bookmarks[i].title));
+        link.href = bookmarks[i].url;
+      }
       td.appendChild(link);
       row.appendChild(td);
     }
