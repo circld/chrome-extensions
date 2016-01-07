@@ -202,6 +202,12 @@
   addSearch('yelp', function(s) {
     window.location.href = 'http://www.yelp.com/search?find_desc=' + s + '&find_loc=Denver%2C+CO&ns=1';
   });
+  addSearch('youtube', function(s) {
+    window.location.href = 'https://www.youtube.com/results?search_query=' + s;
+  });
+  addSearch('oxfordenglish', function(s) {
+    window.location.href = 'http://www.oxforddictionaries.com/definition/english/' + s;
+  });
   addSearch('subreddit', function(s) {
     window.location.href = 'http://www.reddit.com/r/' + s;
   });
